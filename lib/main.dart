@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:identity_card/identitypage.dart';
+import 'package:identity_card/home.dart';
+import 'package:identity_card/shamolid.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Identity(),
+      home: Home(),
     );
   }
 }
