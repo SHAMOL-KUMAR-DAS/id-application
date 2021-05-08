@@ -166,6 +166,13 @@ class _SamihaidState extends State<Samihaid> {
                 },
                 child
                     : Text("Home Page")),
+            SizedBox(height: 40,),
+            GestureDetector(
+              onTap: (){
+                launcher("https://excelitai.com/");
+              },
+              child: Text("Go to our webpage"),
+            )
           ],
         ),
       ),

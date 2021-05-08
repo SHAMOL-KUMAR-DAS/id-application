@@ -166,6 +166,13 @@ class _FarihaidState extends State<Farihaid> {
                 },
                 child
                     : Text("Home Page")),
+            SizedBox(height: 40,),
+            GestureDetector(
+              onTap: (){
+                launcher("https://excelitai.com/");
+              },
+              child: Text("Go to our webpage"),
+            )
           ],
         ),
       ),

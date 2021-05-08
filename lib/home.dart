@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:url_launcher/url_launcher.dart';
 import"shamolid.dart";
 import"samihaid.dart";
 import"samiulid.dart";
@@ -15,11 +16,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void launcher(command) async{
+    if(await canLaunch(command)){
+      launch(command);
+    }
+    else{
+      print("Fail to Launch");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.white38,
         appBar: AppBar(
           backgroundColor: Colors.limeAccent,
           title: Center(
@@ -37,14 +46,23 @@ class _HomeState extends State<Home> {
               height: 10,
             ),
             Center(
-              child: Text("Welcome to Excel IT AI"),
+              child: Text("Welcome to Excel IT AI",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.lightGreenAccent
+              ),),
             ),
             SizedBox(
-              height: 8,
+              height: 35,
             ),
-            Text("Found Your ID Card"),
+            Text("Found Your ID Card",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.yellowAccent
+            ),),
             SizedBox(
-              height: 15,
+              height: 10,
             ),
             Container(
               decoration: BoxDecoration(
@@ -115,8 +133,8 @@ class _HomeState extends State<Home> {
                   Row(
                     children: [
                       SizedBox(width: 10,),
-                      Text("Durjoy"),
-                      SizedBox(width: 160,),
+                      Text("K.M. Mehedi Hasan"),
+                      SizedBox(width: 85,),
                       GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Durjoyid()));
@@ -198,6 +216,16 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
+            SizedBox(height: 40,),
+            GestureDetector(
+              onTap: (){
+                launcher("https://excelitai.com/");
+              },
+              child: Text("Go to our webpage",
+              style: TextStyle(
+                color: Colors.white,
+              ),),
+            )
           ],
         ),
       ),
